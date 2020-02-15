@@ -18,45 +18,54 @@ var words = [
     "vincent kompany",
     "eden hazard"];
 
-// var splitWord = word.split("");
+var word = words[Math.floor(Math.random() * words.length)];
+var splitWord = word.split("");
 
-// console.log(word)
-// console.log(splitWord)
+console.log(word)
+console.log(splitWord)
 
 //First problem is making the 'press any key to start element'
-document.onkeydown = function() {
-    var start = "any key"
-}
+// document.onkeydown = function() {
+//     var start = "any key"
+// }
 
+//Different approach to setting up press any key to play (boolean)
+var isGameOver = false;
+if (isGameOver === false) {
 
 //After pressing any button, it should allow you to start guessing
-document.onkeyup = function() {
-    var userguess = String.fromCharCode(event.keyCode).
-        toLowerCase();
+    document.onkeyup = function() {
+        var userguess = String.fromCharCode(event.keyCode).
+            toLowerCase();
 
-        console.log(userguess);
+            console.log(userguess);
 
-        var word = words[Math.floor(Math.random() * words.length)];
+            //var word = words[Math.floor(Math.random() * words.length)];
 
-        var answerArray = [];
-        for (var i = 0; i < word.length; i++); {
-            answerArray[i] = "_";
-        }
+            var answerArray = [];
+            for (var i = 0; i < word.length; i++); {
+                answerArray[i] = "_";
+            }
 
-        var remainingLetters = word.length;
-        // for (var r = 7; r === 0; r--); {
-        //     if r === 0, endGame
-        // }
+            var remainingLetters = word.length;
+            // for (var r = 7; r === 0; r--); {
+            //     if r === 0, endGame
+            // }
 
-        while (remainingLetters > 0) {
-            document.write(answerArray.join(" "));
+            while (remainingLetters > 0) {
+                document.write(answerArray.join(" "));
 
-                for (var j = 0; j < word.length; j++) {
-                    if (word[j] === userguess) {
-                        answerArray[j] = userguess;
-                        remainingLetters--;
+                    for (var j = 0; j < word.length; j++) {
+                        if (word[j] === userguess) {
+                            answerArray[j] = userguess;
+                            remainingLetters--;
+                        }
                     }
-                }
-        }
+            }
 
+    }
+}
+
+else {
+    onkeydown[]
 }
