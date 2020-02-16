@@ -24,14 +24,27 @@ var splitWord = word.split("");
 console.log(word)
 console.log(splitWord)
 
+var answerArray = [];
+for (var i = 0; i < word.length; i++); {
+    answerArray[i] = "_";
+}
+console.log(answerArray)
+
+var html = "<p>Guess the name of the footballer (soocer player)!!</p>" +
+"<p>Who is this: " + answerArray + "</p>" +
+"<p>Wins: " + wins + "</p>" +
+"<p>Losses: " + losses + "</p>";
+console.log(html)
+document.querySelector(".answerArray").outerHTML = html;
+
 //First problem is making the 'press any key to start element'
 // document.onkeydown = function() {
 //     var start = "any key"
 // }
 
 //Different approach to setting up press any key to play (boolean)
-var isGameOver = false;
-if (isGameOver === false) {
+// var isGameOver = false;
+// if (isGameOver === false) {
 
 //After pressing any button, it should allow you to start guessing
     document.onkeyup = function() {
@@ -42,10 +55,10 @@ if (isGameOver === false) {
 
             //var word = words[Math.floor(Math.random() * words.length)];
 
-            var answerArray = [];
-            for (var i = 0; i < word.length; i++); {
-                answerArray[i] = "_";
-            }
+            // var answerArray = [];
+            // for (var i = 0; i < word.length; i++); {
+            //     answerArray[i] = "_";
+            // }
 
             var remainingLetters = word.length;
             // for (var r = 7; r === 0; r--); {
@@ -64,8 +77,8 @@ if (isGameOver === false) {
             }
 
     }
-}
+// }
 
-else {
-    onkeydown[]
-}
+// else {
+//     onkeydown[];
+// }
