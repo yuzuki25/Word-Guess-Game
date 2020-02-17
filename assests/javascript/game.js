@@ -25,7 +25,7 @@ console.log(word)
 console.log(splitWord)
 
 var answerArray = [];
-for (var i = 0; i < word.length; i++); {
+for (var i = 0; i < word.length; i++) {
     answerArray[i] = "_";
 }
 
@@ -34,14 +34,14 @@ var remainingLetters = word.length;
 console.log(answerArray)
 
 
-var html = "<p>Guess the name of the footballer (soocer player)!!</p>" +
+var myHtml = "<p>Guess the name of the footballer (soocer player)!!</p>" +
 "<p>Who is this: " + answerArray + "</p>" +
 "<p>Wins: " + wins + "</p>" +
 "<p>Losses: " + losses + "</p>";
 
-console.log(html)
+console.log(myHtml)
 
-//document.querySelector(".answerArray").innerHTML = html;
+document.querySelector(".answerArray").innerhtml = (myHtml);
 
 //First problem is making the 'press any key to start element'
 // document.onkeydown = function() {
@@ -54,8 +54,8 @@ console.log(html)
 
 //After pressing any button, it should allow you to start guessing
 while (remainingLetters > 0) {
-    var x = document.getElementById("remaining");
-    x.innerHTML = answerArray.join(" ");
+    //var x = document.getElementById("remaining");
+    document.getElementById("remaining").innerHTML = answerArray.join(" ");
 
     document.onkeyup = function() {
         var userguess = String.fromCharCode(event.keyCode).
