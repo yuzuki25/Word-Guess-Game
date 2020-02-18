@@ -58,17 +58,29 @@ for (var j = 0; j < word.length; j++) {
     }
 }
 
-
+var wrong = 8;
+document.querySelector("#guessRemaining").innerHTML = wrong;
 //Game loop from here.
 while (remainingLetters > 0) {
     if (myGuess === answerArray[j]) {
-        join(answerArray[j]) = myGuess;
+        answerArray.join("#answerArrays") = myGuess;
 
     }
 
+    if (myGuess != answerArray[j]) {
+        wrong--;
+        document.querySelector("#guessed").innerHTML = myGuess;
+    }
+
+    else (wrong === 0) 
+        losses++;
+    
+
 }
 
-
+if (reaminingLetters === 0) {
+    win++;
+}
 
 
 
