@@ -31,31 +31,70 @@ for (var i = 0; i < word.length; i++) {
 
 var remainingLetters = word.length;
 
-console.log(answerArray)
+console.log(answerArray);
 
+//(answerArray.join(" ")) = answer;
 
-var myHtml = "<p>Guess the name of the footballer (soocer player)!!</p>";
 var blankSpaces = "<p>Who is this: " + answerArray + "</p>";
 var win = "<p>Wins: " + wins + "</p>";
 var loss = "<p>Losses: " + losses + "</p>";
 
-console.log(myHtml)
+
 
 document.querySelector("#answerArrays").innerHTML = blankSpaces;
 document.querySelector("#winCount").innerHTML = win;
 document.querySelector("#lossCount").innerHTML = loss;
 
-//First problem is making the 'press any key to start element'
-// document.onkeydown = function() {
-//     var start = "any key"
-// }
+var myGuess;
+document.onkeydown = function(event) {
+    myGuess = event.key;
+    myGuess = onkeydown(userguess);
+}
 
-//Different approach to setting up press any key to play (boolean)
-// var isGameOver = false;
-// if (isGameOver === false) {
+for (var j = 0; j < word.length; j++) {
+    if (word[j] === myGuess) {
+        answerArray[j] = myGuess;
+        remainingLetters--;
+    }
+}
 
-//After pressing any button, it should allow you to start guessing
-// if (remainingLetters > 0) {
+
+//Game loop from here.
+while (remainingLetters > 0) {
+    if (myGuess === answerArray[j]) {
+        join(answerArray[j]) = myGuess;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// while (remainingLetters > 0) {
 //     //var x = document.getElementById("remaining");
 //     document.getElementById("remaining").innerHTML = answerArray.join(" ");
 
@@ -85,6 +124,3 @@ document.querySelector("#lossCount").innerHTML = loss;
 //     }
 // }
 
-// // else {
-// //     onkeydown[];
-// // }
