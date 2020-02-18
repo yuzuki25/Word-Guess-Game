@@ -34,14 +34,16 @@ var remainingLetters = word.length;
 console.log(answerArray)
 
 
-var myHtml = "<p>Guess the name of the footballer (soocer player)!!</p>" +
-"<p>Who is this: " + answerArray + "</p>" +
-"<p>Wins: " + wins + "</p>" +
-"<p>Losses: " + losses + "</p>";
+var myHtml = "<p>Guess the name of the footballer (soocer player)!!</p>";
+var blankSpaces = "<p>Who is this: " + answerArray + "</p>";
+var win = "<p>Wins: " + wins + "</p>";
+var loss = "<p>Losses: " + losses + "</p>";
 
 console.log(myHtml)
 
-document.querySelector(".answerArray").innerhtml = (myHtml);
+document.querySelector("#answerArrays").innerHTML = blankSpaces;
+document.querySelector("#winCount").innerHTML = win;
+document.querySelector("#lossCount").innerHTML = loss;
 
 //First problem is making the 'press any key to start element'
 // document.onkeydown = function() {
@@ -53,36 +55,36 @@ document.querySelector(".answerArray").innerhtml = (myHtml);
 // if (isGameOver === false) {
 
 //After pressing any button, it should allow you to start guessing
-while (remainingLetters > 0) {
-    //var x = document.getElementById("remaining");
-    document.getElementById("remaining").innerHTML = answerArray.join(" ");
+// if (remainingLetters > 0) {
+//     //var x = document.getElementById("remaining");
+//     document.getElementById("remaining").innerHTML = answerArray.join(" ");
 
-    document.onkeyup = function() {
-        var userguess = String.fromCharCode(event.keyCode).
-            toLowerCase();
+//     document.onkeyup = function() {
+//         var userguess = String.fromCharCode(event.keyCode).
+//             toLowerCase();
 
-            console.log(userguess);
+//             console.log(userguess);
 
 
-            var remainingLetters = word.length;
-            // for (var r = 7; r === 0; r--); {
-            //     if r === 0, endGame
-            // }
+//             // var remainingLetters = word.length;
+//             // // for (var r = 7; r === 0; r--); {
+//             // //     if r === 0, endGame
+//             // // }
 
-            while (remainingLetters > 0) {
-                document.write(answerArray.join(" "));
+//             // while (remainingLetters > 0) {
+//             //     document.write(answerArray.join(" "));
 
-                    for (var j = 0; j < word.length; j++) {
-                        if (word[j] === userguess) {
-                            answerArray[j] = userguess;
-                            remainingLetters--;
-                        }
-                    }
-            }
+//             //         for (var j = 0; j < word.length; j++) {
+//             //             if (word[j] === userguess) {
+//             //                 answerArray[j] = userguess;
+//             //                 remainingLetters--;
+//             //             }
+//             //         }
+//             // }
 
-    }
-}
-
-// else {
-//     onkeydown[];
+//     }
 // }
+
+// // else {
+// //     onkeydown[];
+// // }
